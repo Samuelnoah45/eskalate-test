@@ -1,0 +1,11 @@
+repo:
+    - '*'
+
+'@team/mobile':
+    - 'eskalate_mobile/**/*'
+
+'@team/web':
+    - 'eskalate_web/**/*'
+
+'@team/backend':
+    - 'backend/Eskalate/**/*'

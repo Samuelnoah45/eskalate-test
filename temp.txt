@@ -1,0 +1,5 @@
+- developert signin redirect 
+- type definition
+- refactor unnecessary codes
+- seo
+- 404 pages
