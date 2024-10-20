@@ -108,7 +108,7 @@ export default function ProfileProgress() {
                         <Text>Complete profile</Text>
                         <Text fw={500}>{progress?.Progress}%</Text>
                     </Text>
-                    <Progress value={progress?.Progress} />
+                    <Progress value={progress?.Progress} color="secondary" />
                 </Stack>
                 {profileCompleted.map((item: any, index: number) => (
                     <Stack

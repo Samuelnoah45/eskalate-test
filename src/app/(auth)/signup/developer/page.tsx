@@ -23,6 +23,8 @@ import { useRegisterMutation } from '@/lib/redux/api/developer/auth';
 import PasswordStrengthIndicator from '@/components/common/PasswordStrengthIndicator';
 import { handleError } from '@/utils/error_handler';
 import { toast } from 'react-toastify';
+import { COUNTRIES } from '@/constants';
+import { PhoneNumberUtil } from 'google-libphonenumber';
 const Page = () => {
     const router = useRouter();
     const [register, { isLoading, isError, isSuccess, error }] =
@@ -38,6 +40,7 @@ const Page = () => {
     });
 
     const [started, setStarted] = useState(false);
+    const phoneUtil = PhoneNumberUtil.getInstance();
 
     const form = useForm({
         initialValues: {
@@ -56,8 +59,18 @@ const Page = () => {
             lastName: isNotEmpty('Last name is required'),
             email: isEmail('Email is required'),
             country: isNotEmpty('Country is required'),
-            phoneNumber: (value): any =>
-                value.length < 5 ? 'Invalid phone number' : null,
+            phoneNumber: (value: string) => {
+                try {
+                    const parsedNumber = value
+                        ? phoneUtil.parse('+' + value)
+                        : '';
+                    return parsedNumber && phoneUtil.isValidNumber(parsedNumber)
+                        ? null
+                        : 'Invalid phone number';
+                } catch (e) {
+                    return 'Invalid phone number format';
+                }
+            },
             password: (value) => {
                 if (value.length < 8)
                     return 'Password must have at least 8 characters';
@@ -77,6 +90,7 @@ const Page = () => {
     });
 
     const handleSignup = (values: any) => {
+        console.log(values);
         const error = form.validate() as any;
         if (error.hasErrors) return;
 
@@ -145,7 +159,7 @@ const Page = () => {
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, lg: 6 }}>
                     <TextInput
-                        label="last Name"
+                        label="Last Name"
                         withAsterisk
                         mt="md"
                         {...form.getInputProps('lastName')}
@@ -164,7 +178,7 @@ const Page = () => {
                         withAsterisk
                         label="Country"
                         data-testid="country-input"
-                        data={['Ethiopia', 'Ghana']}
+                        data={COUNTRIES}
                         {...form.getInputProps('country')}
                     />
                 </Grid.Col>
@@ -194,16 +208,11 @@ const Page = () => {
                         }}
                         placeholder="Phone Number"
                     />
-                    {started &&
-                        form.getInputProps('phoneNumber').value.length < 5 && (
-                            <Text
-                                style={{ fontSize: '13px' }}
-                                mt="1px"
-                                color="red"
-                            >
-                                invalid phone number
-                            </Text>
-                        )}
+                    {form.errors?.phoneNumber && (
+                        <Text style={{ fontSize: '13px' }} mt="1px" color="red">
+                            {form.errors?.phoneNumber}
+                        </Text>
+                    )}
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, lg: 6 }}>
                     <PasswordInput
@@ -225,18 +234,7 @@ const Page = () => {
                         {...form.getInputProps('confirmPassword')}
                     />
                 </Grid.Col>
-                {error && (
-                    <Grid.Col span={{ base: 12, lg: 12 }}>
-                        <Text
-                            style={{
-                                color: 'red'
-                            }}
-                        >
-                            {(error as any).data?.message}
-                        </Text>
-                    </Grid.Col>
-                )}
-                {/* <Group></Group> */}
+
                 <Grid.Col
                     span={{ base: 12, lg: 12 }}
                     className="flex justify-center"
@@ -260,9 +258,9 @@ const Page = () => {
                         <Text fw={400} size="sm">
                             Already have an account?{' '}
                             <Link
-                                href={'/signin'}
+                                href={'/'}
                                 style={{
-                                    color: '#2195F3',
+                                    color: 'var(--mantine-color-secondary-6)',
                                     textDecoration: 'underline',
                                     cursor: 'pointer'
                                 }}

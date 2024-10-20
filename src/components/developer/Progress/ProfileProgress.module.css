@@ -14,9 +14,9 @@
 }
 
 .completed:hover {
-    color: var(--mantine-color-blue-4);
+    color: var(--mantine-color-secondary-7);
 }
 
 .incomplete:hover {
-    color: var(--mantine-color-blue-4);
+    color: var(--mantine-color-secondary-7);
 }

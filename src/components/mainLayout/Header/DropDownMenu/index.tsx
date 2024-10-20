@@ -24,7 +24,7 @@ export default function DropDownMenu() {
     const loginState = useAppSelector((state: any) => state.login);
     const handleLogout = () => {
         dispatch(unsetUser());
-        router.push('/signin');
+        router.push('/');
     };
 
     return (

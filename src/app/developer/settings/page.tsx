@@ -160,7 +160,10 @@ const Page = () => {
 
                     <Button
                         miw={'40%'}
-                        style={{ backgroundColor: '#2195F3', alignSelf: 'end' }}
+                        style={{
+                            backgroundColor: 'var(--mantine-color-primary-6)',
+                            alignSelf: 'end'
+                        }}
                         type="submit"
                         loading={isChangingPassword}
                     >

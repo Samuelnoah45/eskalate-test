@@ -101,7 +101,7 @@ export default function UploadProfilePicture({ close }: Props) {
                                     style={{
                                         width: rem(52),
                                         height: rem(52),
-                                        color: 'var(--mantine-color-blue-6)'
+                                        color: 'var(--mantine-color-primary-6)'
                                     }}
                                     stroke={1.5}
                                 />

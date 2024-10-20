@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MantineProvider } from '@mantine/core';
 import { theme } from '@/theme';
-import Page from '@/app/(auth)/signin/forgot/page';
+import Page from '@/app/(auth)/(signin)/forgot/page';
 import { useForgotPasswordMutation } from '@/lib/redux/api/developer/auth';
 import { handleError } from '@/utils/error_handler';
 import ReduxProvider from '@/Providers/ReduxProvider';

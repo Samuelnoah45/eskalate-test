@@ -53,76 +53,78 @@ export default function Header() {
         >
             <Link href="/">
                 <Image
-                    src={'/images/logos/Logo.svg'}
+                    src={'/images/logos/Logo10.svg'}
                     width={132}
                     height={50}
                     alt="logo"
                 />
             </Link>
+
             <Group>
                 {/* will be implemented later */}
                 {isOwner && !isView && (
-                    <Group gap={'sm'}>
-                        <Text
-                            c="gray.7"
-                            display={{ base: 'none', xs: 'none', sm: 'flex' }}
-                        >
-                            {developer?.availability?.availabilityStatus === 0
-                                ? 'Available For Job'
-                                : developer?.availability
-                                        ?.availabilityStatus === 1
-                                  ? 'Not Available'
-                                  : 'Available soon'}
-                        </Text>
-                        <Group pos={'relative'} align="center">
-                            <ActionIcon
-                                variant="subtle"
-                                color="gray"
-                                size={'lg'}
-                            >
-                                <IconBriefcase2
-                                    style={{ color: 'gray.6' }}
-                                    onClick={open}
-                                />
-                            </ActionIcon>
-                            {developer?.availability?.availabilityStatus ===
-                            0 ? (
-                                <Badge
-                                    color="green"
-                                    circle
-                                    size="8px"
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: 0,
-                                        right: 0
-                                    }}
-                                />
-                            ) : developer?.availability?.availabilityStatus ===
-                              1 ? (
-                                <Badge
-                                    color="red"
-                                    circle
-                                    size="8px"
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: 0,
-                                        right: 0
-                                    }}
-                                />
-                            ) : (
-                                <Badge
-                                    color="yellow"
-                                    circle
-                                    size="8px"
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: 0,
-                                        right: 0
-                                    }}
-                                />
-                            )}
-                        </Group>
-                    </Group>
+                    //<Group gap={'sm'}>
+                    //    <Text
+                    //        c="gray.7"
+                    //        display={{ base: 'none', xs: 'none', sm: 'flex' }}
+                    //    >
+                    //        {developer?.availability?.availabilityStatus === 0
+                    //            ? 'Available For Job'
+                    //            : developer?.availability
+                    //                    ?.availabilityStatus === 1
+                    //              ? 'Not Available'
+                    //              : 'Available soon'}
+                    //    </Text>
+                    //    <Group pos={'relative'} align="center">
+                    //        <ActionIcon
+                    //            variant="subtle"
+                    //            color="gray"
+                    //            size={'lg'}
+                    //        >
+                    //            <IconBriefcase2
+                    //                style={{ color: 'gray.6' }}
+                    //                onClick={open}
+                    //            />
+                    //        </ActionIcon>
+                    //        {developer?.availability?.availabilityStatus ===
+                    //        0 ? (
+                    //            <Badge
+                    //                color="green"
+                    //                circle
+                    //                size="8px"
+                    //                style={{
+                    //                    position: 'absolute',
+                    //                    bottom: 0,
+                    //                    right: 0
+                    //                }}
+                    //            />
+                    //        ) : developer?.availability?.availabilityStatus ===
+                    //          1 ? (
+                    //            <Badge
+                    //                color="red"
+                    //                circle
+                    //                size="8px"
+                    //                style={{
+                    //                    position: 'absolute',
+                    //                    bottom: 0,
+                    //                    right: 0
+                    //                }}
+                    //            />
+                    //        ) : (
+                    //            <Badge
+                    //                color="yellow"
+                    //                circle
+                    //                size="8px"
+                    //                style={{
+                    //                    position: 'absolute',
+                    //                    bottom: 0,
+                    //                    right: 0
+                    //                }}
+                    //            />
+                    //        )}
+                    //    </Group>
+                    //</Group>
+                    <></>
                 )}
 
                 {!isView && isOwner ? (
@@ -196,7 +198,7 @@ export default function Header() {
                                         leftSection={
                                             copied ? (
                                                 <IconCheck
-                                                    color="var(--mantine-color-blue-6)"
+                                                    color="var(--mantine-color-primary-6)"
                                                     style={{
                                                         width: 16
                                                     }}
@@ -236,6 +238,7 @@ export default function Header() {
                     </Flex>
                 )}
             </Group>
+
             <Modal.Root opened={opened} onClose={close} centered size="xl">
                 <Modal.Overlay />
 

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         title: 'Eskalate: Hire Top African Tech Talent',
         description:
             'Build your tech team with skilled & diverse remote developers from Africa. Access top talent at competitive rates.',
-        images: ['https://www.eskalate.io/Logo.svg'] // Replace with actual image URL
+        images: ['https://www.eskalate.io/images/logos/Logo10.svg'] // Replace with actual image URL
     }
 };
 

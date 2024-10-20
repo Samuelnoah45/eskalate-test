@@ -14,7 +14,7 @@ import {
 import { isNotEmpty, matches, useForm } from '@mantine/form';
 import React from 'react';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
-import { socialLinks } from '@/constants';
+import { COUNTRIES, socialLinks } from '@/constants';
 import classes from './BasicInfo.module.css';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
@@ -294,12 +294,7 @@ export function AddBasicInfo({
                 <Grid.Col span={6}>
                     <Select
                         withAsterisk
-                        data={[
-                            { label: 'Ethiopia', value: 'Ethiopia' },
-                            { label: 'Kenya', value: 'Kenya' },
-                            { label: 'Ghana', value: 'Ghana' },
-                            { label: 'Egypt', value: 'Egypt' }
-                        ]}
+                        data={COUNTRIES}
                         label={'Country'}
                         {...form.getInputProps('country')}
                         placeholder="Country"
