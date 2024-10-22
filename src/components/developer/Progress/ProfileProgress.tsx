@@ -124,7 +124,7 @@ export default function ProfileProgress({ id }: ProfileProgressProps) {
                             w={'100%'}
                             //c={item.completed ? 'gray.8' : 'gray.4'}
                             justify="space-between"
-                            onClick={item.openModal}
+                            // onClick={item.openModal}
                         >
                             <Text
                                 className={
