@@ -14,6 +14,16 @@ const apiWithDeveloper = baseApi.injectEndpoints({
         getTopDeveloper: builder.query<any, void>({
             query: () => 'v1/developers/getTopDevelopers'
         }),
+        getProgressBarById: builder.query({
+            query: (id) => `v1/developers/getProgressBarById/${id}`,
+            providesTags: [
+                'Developer',
+                'Education',
+                'Experience',
+                'Project',
+                'Skill'
+            ]
+        }),
         getDevelopers: builder.query<Developer[], void>({
             query: () => 'api/Developer/GetAll',
             providesTags: ['Developer']
@@ -146,5 +156,6 @@ export const {
     useDeleteDeveloperMutation,
     useGetPaginatedDevelopersQuery,
     useGetProgressBarQuery,
+    useGetProgressBarByIdQuery,
     useUpdateAvailabilityMutation
 } = apiWithDeveloper;

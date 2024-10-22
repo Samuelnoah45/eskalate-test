@@ -124,11 +124,7 @@ export default function Profile({ params }: { params: { id: string } }) {
                 )}
             </Grid>
         );
-    } else if (
-        !developer?.user ||
-        isError ||
-        (developer?.user?.isAccountVerified === false && !isOwner)
-    ) {
+    } else if (!developer?.user || isError) {
         return (
             <Box
                 h={'100%'}
@@ -303,21 +299,20 @@ export default function Profile({ params }: { params: { id: string } }) {
                     )}
                 <ProfileCenter />
             </Grid.Col>
-            {isOwner && !isView && (
-                <Grid.Col
-                    span={{ xs: 12, sm: 6, md: 3 }}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }}
-                    visibleFrom="md"
-                    pos={'relative'}
-                >
-                    <Group pos={'fixed'} justify="center" px={0}>
-                        <ProfileProgress />
-                    </Group>
-                </Grid.Col>
-            )}
+
+            <Grid.Col
+                span={{ xs: 12, sm: 6, md: 3 }}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}
+                visibleFrom="md"
+                pos={'relative'}
+            >
+                <Group pos={'fixed'} justify="center" px={0}>
+                    <ProfileProgress id={params.id} />
+                </Group>
+            </Grid.Col>
         </Grid>
     );
 }

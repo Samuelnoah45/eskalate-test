@@ -4,12 +4,15 @@ import { IconCircleCheck } from '@tabler/icons-react';
 import React from 'react';
 import styles from './ProfileProgress.module.css';
 import { useRouter } from 'next/navigation';
-import { useGetProgressBarQuery } from '@/lib/redux/api/developer/developer';
 import { useModals } from '@/Providers/ModalContext';
 
-export default function ProfileProgress() {
+import { useGetProgressBarByIdQuery } from '@/lib/redux/api/developer/developer';
+type ProfileProgressProps = {
+    id: string;
+};
+export default function ProfileProgress({ id }: ProfileProgressProps) {
     const router = useRouter();
-    const { data: progress, isLoading } = useGetProgressBarQuery({});
+    const { data: progress, isLoading } = useGetProgressBarByIdQuery(id);
     const {
         openOverviewModal,
         openBasicInfoModal,
