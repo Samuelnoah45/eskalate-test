@@ -19,4 +19,4 @@ Eskalate is a platform that connects clients with pre-vetted, A2SV trained devel
 
 1. Access the application through the provided URL.
 2. Create an account or log in with existing credentials.
-3. Create and manage your developer profile, showcasing your skills and experience..
+3. Create and manage your developer profile, showcasing your skills and experience.
