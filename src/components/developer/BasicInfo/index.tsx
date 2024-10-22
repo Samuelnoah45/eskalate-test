@@ -471,20 +471,6 @@ export function ViewBasicInfo() {
                         Intro video
                     </Button>
                 )}
-                {!isOwner && (
-                    <Button
-                        size="md"
-                        style={{
-                            fontWeight: 400
-                        }}
-                        component={Link}
-                        //href={developer?.resumeUrl}
-                        href={`/hire`}
-                    >
-                        {' '}
-                        Hire {developer?.user?.fullName?.split(' ')[0]}
-                    </Button>
-                )}
             </Group>
             <Modal
                 p={0}
