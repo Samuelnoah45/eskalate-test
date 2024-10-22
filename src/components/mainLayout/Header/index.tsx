@@ -186,9 +186,6 @@ export default function Header() {
                     <Skeleton style={{ borderRadius: '30px' }} h={40} w={200} />
                 ) : (
                     <Flex gap={'md'} align={'center'}>
-                        <Button component={Link} href={`../signup/client`}>
-                            Hire top talent
-                        </Button>
                         <CopyButton value={url}>
                             {({ copied, copy }) => (
                                 <>
