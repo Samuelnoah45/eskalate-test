@@ -105,7 +105,7 @@ export default function IntroVideoForm({
                     <Dropzone.Accept>
                         <LuUploadCloud
                             style={{
-                                color: 'var(--mantine-color-blue-6)',
+                                color: 'var(--mantine-color-primary-6)',
                                 width: '50px',
                                 height: 'auto'
                             }}
@@ -134,7 +134,7 @@ export default function IntroVideoForm({
                         >
                             <LuUploadCloud
                                 style={{
-                                    color: 'var(--mantine-color-blue-6)',
+                                    color: 'var(--mantine-color-primary-6)',
                                     width: '50px',
                                     height: 'auto'
                                 }}

@@ -6,6 +6,7 @@ import {
     IconLink
 } from '@tabler/icons-react';
 import { SiCodeforces } from 'react-icons/si';
+import countryList from 'react-select-country-list';
 
 export const socialLinks = {
     linkedin: (
@@ -36,5 +37,14 @@ export const socialLinks = {
         </Tooltip>
     )
 };
+
+export const COUNTRIES = countryList()
+    .getData()
+    .map((country) => {
+        return {
+            label: country.label,
+            value: country.label
+        };
+    });
 
 // dictionary of links

@@ -108,7 +108,7 @@ const UploadResumeStep = () => {
                         <Dropzone.Accept>
                             <LuUploadCloud
                                 style={{
-                                    color: 'var(--mantine-color-blue-6)',
+                                    color: 'var(--mantine-color-primary-6)',
                                     width: '50px',
                                     height: 'auto'
                                 }}
@@ -139,7 +139,7 @@ const UploadResumeStep = () => {
                                     <>
                                         <LuUploadCloud
                                             style={{
-                                                color: 'var(--mantine-color-blue-6)',
+                                                color: 'var(--mantine-color-primary-6)',
                                                 width: '50px',
                                                 height: 'auto'
                                             }}
@@ -153,7 +153,7 @@ const UploadResumeStep = () => {
                                     <>
                                         <LuUploadCloud
                                             style={{
-                                                color: 'var(--mantine-color-blue-6)',
+                                                color: 'var(--mantine-color-primary-6)',
                                                 width: '50px',
                                                 height: 'auto'
                                             }}
@@ -214,7 +214,6 @@ const UploadResumeStep = () => {
 
                     <Button
                         variant="filled"
-                        color="#2195F3"
                         onClick={uploadResume}
                         loading={isUpdating}
                     >

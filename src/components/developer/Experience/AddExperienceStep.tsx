@@ -43,6 +43,7 @@ import { handleError } from '@/utils/error_handler';
 import { toast } from 'react-toastify';
 import { validateURL } from '@/utils/validators';
 import { useModals } from '@/Providers/ModalContext';
+import { COUNTRIES } from '@/constants';
 
 const AddExperienceStep = () => {
     const [companyDescriptionEditor, setCompanyDescriptionEditor] =
@@ -323,63 +324,7 @@ const AddExperienceStep = () => {
                             <Select
                                 label="Country"
                                 placeholder="Ethiopia"
-                                data={[
-                                    'Algeria',
-                                    'Angola',
-                                    'Benin',
-                                    'Botswana',
-                                    'Burkina Faso',
-                                    'Burundi',
-                                    'Cabo Verde',
-                                    'Cameroon',
-                                    'Central African Republic',
-                                    'Chad',
-                                    'Comoros',
-                                    'Democratic Republic of the Congo',
-                                    'Republic of the Congo',
-                                    'Djibouti',
-                                    'Egypt',
-                                    'Equatorial Guinea',
-                                    'Eritrea',
-                                    'Eswatini',
-                                    'Ethiopia',
-                                    'Gabon',
-                                    'Gambia',
-                                    'Ghana',
-                                    'Guinea',
-                                    'Guinea-Bissau',
-                                    'Ivory Coast',
-                                    'Kenya',
-                                    'Lesotho',
-                                    'Liberia',
-                                    'Libya',
-                                    'Madagascar',
-                                    'Malawi',
-                                    'Mali',
-                                    'Mauritania',
-                                    'Mauritius',
-                                    'Morocco',
-                                    'Mozambique',
-                                    'Namibia',
-                                    'Niger',
-                                    'Nigeria',
-                                    'Rwanda',
-                                    'Sao Tome and Principe',
-                                    'Senegal',
-                                    'Seychelles',
-                                    'Sierra Leone',
-                                    'Somalia',
-                                    'South Africa',
-                                    'South Sudan',
-                                    'Sudan',
-                                    'Tanzania',
-                                    'Togo',
-                                    'Tunisia',
-                                    'Turkey',
-                                    'Uganda',
-                                    'Zambia',
-                                    'Zimbabwe'
-                                ]}
+                                data={COUNTRIES}
                                 {...form.getInputProps('country')}
                             />
                         </Grid.Col>

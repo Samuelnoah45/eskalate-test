@@ -16,7 +16,7 @@
     font-size: 13px;
     min-width: 70px;
     color: #333;
-    border: 1px solid #2195f3;
+    border: 1px solid var(--mantine-color-primary-6);
     transition: background-color 0.3s ease;
 }
 

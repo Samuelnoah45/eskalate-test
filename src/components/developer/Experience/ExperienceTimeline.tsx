@@ -5,14 +5,14 @@ import DisplayExperience from './DisplayExperience';
 
 const ExperienceTimeline = ({ experiences }: { experiences: any }) => {
     return (
-        <Timeline active={999} lineWidth={1} bulletSize={15} color="blue.6">
+        <Timeline active={999} lineWidth={1} bulletSize={15} color="secondary">
             {experiences.map((experience: any) => (
                 <Timeline.Item
                     key={experience ? experience.id : Math.random()}
                     bullet={
                         <FaCircle
                             size={12}
-                            color="var(--mantine-color-blue-6)"
+                            color="var(--mantine-color-secondary-6)"
                         />
                     }
                 >

@@ -6,14 +6,14 @@ import { Education } from '@/types';
 
 const EducationTimeline = ({ educations }: { educations: any[] }) => {
     return (
-        <Timeline active={999} lineWidth={1} bulletSize={15} color="blue.6">
+        <Timeline active={999} lineWidth={1} bulletSize={15} color="secondary">
             {educations.map((education: Education) => (
                 <Timeline.Item
                     key={education.id}
                     bullet={
                         <FaCircle
                             size={12}
-                            color="var(--mantine-color-blue-6)"
+                            color="var(--mantine-color-secondary-6)"
                         />
                     }
                 >

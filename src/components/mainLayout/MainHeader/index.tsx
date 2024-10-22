@@ -46,7 +46,7 @@ export default function MainHeader() {
             >
                 <Link href="/">
                     <Image
-                        src={'images/logos/Logo.svg'}
+                        src={'images/logos/Logo10.svg'}
                         width={132}
                         height={50}
                         alt="logo"

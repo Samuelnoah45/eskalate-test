@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '../utils/test_utils';
-import SignIn from '@/app/(auth)/signin/page';
+import SignIn from '@/app/(auth)/(signin)/page';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import { useLoginMutation } from '@/lib/redux/api/developer/auth';

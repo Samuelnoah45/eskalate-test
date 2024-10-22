@@ -1,12 +1,11 @@
 .page {
     display: flex;
-
     height: 100vh;
     overflow: hidden;
 }
 
 .logo {
-    background-color: #2195f3;
+    background-color: var(--mantine-color-primary-6);
     color: white;
     height: 100%;
     padding: 0;
@@ -71,7 +70,7 @@
 }
 
 .input {
-    border: 1px solid #2195f3;
+    border: 1px solid var(--mantine-color-primary-6);
     background-color: rgba(35, 166, 240, 0.05);
 }
 
@@ -107,11 +106,13 @@
     background: #f1f1f1;
     border-radius: 5px;
 }
+
 .inputStyle label {
     margin: 5px;
 }
+
 .inputStyle input:focus {
-    border: 1px solid #2195f3 !important;
+    border: 1px solid var(--mantine-color-primary-6) !important;
 }
 
 .countryCode {
@@ -138,7 +139,7 @@
 }
 
 .applyBtn {
-    background-color: #2195f3;
+    background-color: var(--mantine-color-primary-6);
     color: white;
     border: none;
     padding: 10px 25px;
@@ -149,7 +150,7 @@
 }
 
 .applyBtnSkip {
-    color: #2195f3;
+    color: var(--mantine-color-primary-6);
     border: 2;
     padding: 10px 20px;
     border-radius: 5px;
@@ -182,7 +183,6 @@
     .multiSelect {
         width: 100%;
     }
-
     .centerOnMobile {
         text-align: center;
     }
